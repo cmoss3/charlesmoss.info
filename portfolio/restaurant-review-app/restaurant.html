@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Charset-->
+  <meta charset="utf-8">
+  <!--Base Styles-->
+  <style>
+    body,li,p,td,th,ul{font-size:10pt;color:#333;font-family:Arial,Helvetica,sans-serif}a,a:focus,a:hover{text-decoration:none}body,h1,h2,h3,h4,h5,h6,li,p,td,th,ul{font-family:Arial,Helvetica,sans-serif}#footer,nav>h1>a{text-transform:uppercase}#footer,#no-script,nav{text-align:center}body,p,td,th{line-height:1.5}body{background-color:#fdfdfd;margin:0;position:relative}a{color:orange}a:focus,a:hover{color:#3397db}a img{border:0 #fff}h1,h2,h3,h4,h5,h6{margin:0 0 20px}article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}#maincontent{background-color:#f3f3f3;min-height:100%}#footer{background-color:#444;color:#aaa;font-size:8pt;letter-spacing:1px;padding:25px}nav>h1>a{line-height:80px;font-size:7pt;color:#fff;font-weight:200;letter-spacing:10px}.hide{display:none}.install-progressive-app{position:fixed;top:10px;right:20px}#no-script{margin-top:50px}nav{width:100%;height:80px;background-color:#252831}nav h1{margin:auto}
+  </style>
+  <!-- Main CSS file -->
+  <link disabled rel="stylesheet" href="css/styles.css" type="text/css" id="deferred-styles">
+  <!--Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Progressive App Manifest-->
+  <link rel="manifest" href="/manifest.json">
+  <!--Theme Color-->
+  <meta name="theme-color" content="#252831">
+  <!--Title-->
+  <title>Restaurant Info</title>
+</head>
+
+<body class="inside" id="review-page-body">
+
+  <header aria-label="Page header">
+    <nav aria-label="Page navigation">
+      <h1><a href="/">Restaurant Reviews</a></h1>
+      <a href="#" class="install-progressive-app hide">Install App</a>
+    </nav>
+    <div id="no-script">
+      <strong>Please enable JavaScript before using this site</strong>
+    </div>
+  </header>
+
+  <!-- Beginning main -->
+  <main id="maincontent" style="display: none;" aria-label="Page content">
+    <!-- Beginning breadcrumb -->
+    <nav id="breadcrumb-container" aria-label="Breadcrumb">
+      <ol id="breadcrumb" >
+        <li><a href="/" aria-current="page">Home</a></li>
+      </ol>
+    </nav>
+    <!-- End breadcrumb -->
+    <!-- Beginning map -->
+    <section id="map-container" aria-label="Restaurant location map" role="application">
+      <div id="map"></div>
+    </section>
+    <!-- End map -->
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container" aria-label="Restaurant information">
+        <h2 id="restaurant-name"></h2>
+        <a href="#" id="favourite-star-wrapper"></a>
+        <picture id="restaurant-img">
+           <source
+                 srcset="img/webp/X-800.webp 800w, img/webp/X-600.webp 600w, img/webp/X-400.webp 400w"
+                 sizes="(max-width: 480px) 400px,(max-width: 680px) 600px, 800px">
+            <img
+                 alt=""
+                 src="img/X-800.jpg"
+                 srcset="img/X-800.jpg 800w, img/jpeg/X-600.jpg 600w, img/jpeg/X-400.jpg 400w"
+                 sizes="(max-width: 480px) 400px,(max-width: 680px) 600px, 800px">
+        </picture>
+        <p id="restaurant-cuisine" aria-label="Restaurant cuisine"></p>
+        <p id="restaurant-address" aria-label="Restaurant address"></p>
+        <table id="restaurant-hours" aria-label="Restaurant hours"></table>
+    </section>
+    <!-- end restaurant -->
+    <!-- Beginning reviews -->
+    <section id="reviews-container" aria-label="Restaurant reviews">
+      <h2>Reviews</h2>
+      <ul id="reviews-list"></ul>
+    </section>
+    <!-- End reviews -->
+    <!--Begin review form-->
+    <form aria-label="Write a review" id="review-form">
+      <h3>Write a review</h3>
+      <div class="review-input-wrapper">
+        <label for="rating-input">Rating</label>
+        <select name="rating" aria-label="Rating input" id="rating-input" class="review-input">
+          <option value="1">1 Star</option>
+          <option value="2">2 Star</option>
+          <option value="3">3 Star</option>
+          <option value="4">4 Star</option>
+          <option value="5">5 Star</option>
+        </select>
+      </div>
+      <div class="review-input-wrapper">
+        <label for="name-input">Name</label>
+        <input name="name" placeholder="Name" aria-label="Name input" id="name-input" class="review-input">
+      </div>
+      <div class="review-input-wrapper">
+        <label for="review-input">Review</label>
+        <textarea name="comments" placeholder="Review" aria-label="Review input" id="review-input" class="review-input"></textarea>
+      </div>
+      <button type="submit">Submit Review</button>
+    </form>
+    <!--End review form-->
+    <!-- Beginning footer -->
+    <footer id="footer" aria-label="Page footer">
+      Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    </footer>
+    <!-- End footer -->
+  </main>
+  <!-- End main -->
+
+  <script type="application/javascript">
+      //Enable view if JavaScript is available
+      document.querySelector('#maincontent').style = '';
+      document.querySelector('#no-script').className = 'hide';
+      //Load deferred styles
+      document.querySelector('#deferred-styles').removeAttribute('disabled');
+  </script>
+  <!--IndexedDB Wrapper-->
+  <script type="application/javascript" charset="utf-8" src="js/browserDB.js"></script>
+  <!-- Beginning scripts -->
+  <script type="application/javascript" charset="utf-8" src="js/common.js"></script>
+  <!-- Database helpers -->
+  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <!-- Main javascript file -->
+  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <!-- Google Maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVBo7pG2U82PjEJWyLbngIowRp8DiHd2E&libraries=places&callback=initMap"></script>
+  <!-- End scripts -->
+
+</body>
+
+</html>
