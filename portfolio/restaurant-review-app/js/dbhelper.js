@@ -8,7 +8,7 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 2053;
+    const port = 8080;
     return `https://www.charlesmoss.info:${port}`;
   }
 
