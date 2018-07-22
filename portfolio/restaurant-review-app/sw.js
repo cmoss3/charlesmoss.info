@@ -2,14 +2,14 @@ const syncStore = {};
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
     '/',
-    '/css/styles.css',
-    '/js/common.js',
-    '/js/browserDB.js',
-    '/js/dbhelper.js',
-    '/js/main.js',
-    '/js/restaurant_info.js',
-    '/index.html',
-    '/restaurant.html',
+    '/portfolio/restaurant-review-app/css/styles.css',
+    '/portfolio/restaurant-review-app/js/common.js',
+    '/portfolio/restaurant-review-app/js/browserDB.js',
+    '/portfolio/restaurant-review-app/js/dbhelper.js',
+    '/portfolio/restaurant-review-app/js/main.js',
+    '/portfolio/restaurant-review-app/js/restaurant_info.js',
+    '/portfolio/restaurant-review-app/index.html',
+    '/portfolio/restaurant-review-app/restaurant.html',
     'https://png.icons8.com/color/50/000000/filled-star.png',
     'https://png.icons8.com/color/50/000000/star.png'
 ];
