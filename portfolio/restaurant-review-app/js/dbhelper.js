@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 1337;
-    return `http://www.charlesmoss.info:${port}`;
+    return `https://www.charlesmoss.info:${port}`;
   }
 
   /**
